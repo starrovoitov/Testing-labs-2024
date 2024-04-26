@@ -1,0 +1,6 @@
+[ERROR] 2024-04-26T17:47:17.788Z: NoSuchElementError: no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(text(), "Акции")]"}
+  (Session info: chrome=124.0.6367.61)
+[ERROR] 2024-04-26T18:19:16.298Z: NoSuchElementError: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[3]/div/div/div/div[3]/div[2]/div[1]/div/div/div[7]/div/div[2]/div[2]/a"}
+  (Session info: chrome=124.0.6367.61)
+[ERROR] 2024-04-26T18:22:33.961Z: NoSuchElementError: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[3]/header/div[2]/nav/ul/li[4]"}
+  (Session info: chrome=124.0.6367.61)

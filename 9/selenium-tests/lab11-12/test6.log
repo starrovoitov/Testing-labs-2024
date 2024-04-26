@@ -1,0 +1,4 @@
+[ERROR] 2024-04-26T18:13:57.485Z: NoSuchElementError: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[3]/div/div/article/div[2]/div[2]/div[1]/div[2]/div[2]/div[2]/div/select"}
+  (Session info: chrome=124.0.6367.61)
+[ERROR] 2024-04-26T18:14:31.809Z: NoSuchElementError: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[3]/div/div/article/div[2]/div[2]/div[1]/div[2]/div[2]/div[2]/div/div[2]/ul/li[2]"}
+  (Session info: chrome=124.0.6367.61)

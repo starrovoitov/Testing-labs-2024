@@ -1,0 +1,8 @@
+[ERROR] 2024-04-26T17:58:31.369Z: ElementNotInteractableError: element not interactable
+  (Session info: chrome=124.0.6367.61)
+[ERROR] 2024-04-26T18:01:07.948Z: NoSuchElementError: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[3]/div/div/article/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/div[1]"}
+  (Session info: chrome=124.0.6367.61)
+[ERROR] 2024-04-26T18:01:17.762Z: NoSuchElementError: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[3]/div/div/article/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/div[1]"}
+  (Session info: chrome=124.0.6367.61)
+[ERROR] 2024-04-26T18:01:59.120Z: NoSuchElementError: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[3]/div/div/article/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/div[1]"}
+  (Session info: chrome=124.0.6367.61)
