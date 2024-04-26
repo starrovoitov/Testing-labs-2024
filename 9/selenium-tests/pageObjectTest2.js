@@ -5,7 +5,7 @@ class BelitaShopPage {
     constructor(driver) {
         this.driver = driver;
         this.cartDeleteButton = By.xpath('/html/body/div[3]/div/div/article/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/table/tbody/tr/td[5]/div');
-        this.AddToCartButton = By.xpath('/html/body/div[3]/div/div/div/div[3]/div[2]/div[1]/div/div/div[7]/div/div[2]/div[2]/a');
+        this.AddToCartButton = By.xpath('/html/body/div[3]/div/div/article/div[3]/div[1]/div[1]/div[4]/div[1]/div[3]/a');
         this.totalPriceElement = By.css('[data-entity="basket-total-price"]');
     }
 
@@ -19,8 +19,13 @@ class BelitaShopPage {
     }
 
     async clickAddToCart() {
+        await this.driver.sleep(2000);
         const addToCartButton = await this.driver.findElement(this.AddToCartButton);
         await addToCartButton.click();
+        await this.driver.sleep(2000);
+    }
+    async goToItem() {
+        await this.driver.get('https://belita-shop.by/katalog/tush-dlya-resnits/tush_dlya_resnits_million_lashes_obem_milliona_resnits_chernaya_luxury.html');
     }
 
     async goToCart() {
@@ -46,6 +51,7 @@ class BelitaShopPage {
     try {
         await belitaShopPage.open();
         await belitaShopPage.waitForCatalogItem();
+        await belitaShopPage.goToItem();
         await belitaShopPage.clickAddToCart();
         await belitaShopPage.goToCart();
         await belitaShopPage.deleteFromCart();
