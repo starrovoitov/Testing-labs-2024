@@ -59,6 +59,5 @@ class BelitaShopPage extends Page {
         if (browserManager) {
             await browserManager.quit();
         }
-        logManager.close();
     }
 })();

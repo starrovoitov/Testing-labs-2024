@@ -5,7 +5,7 @@ const BrowserManager = require('./BrowserManager');
 const BelitaShopPage = require('./BelitaShopPage');
 
 (async function belitaShopTest() {
-    const logManager = new LogManager('./test2.log');
+    const logManager = new LogManager('./test3.log');
     logManager.initialize();
 
     let browserManager;
@@ -28,6 +28,5 @@ const BelitaShopPage = require('./BelitaShopPage');
         if (browserManager) {
             await browserManager.quit();
         }
-        logManager.close();
     }
 })();

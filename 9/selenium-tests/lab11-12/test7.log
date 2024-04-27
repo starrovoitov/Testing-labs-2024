@@ -7,3 +7,9 @@
 [ERROR] 2024-04-26T18:24:46.480Z: TypeError: this.findElement(...).getText is not a function
 [ERROR] 2024-04-26T18:25:40.986Z: TypeError: maxQuantityText.split is not a function
 [ERROR] 2024-04-26T18:26:17.764Z: TypeError: this.sendKeys is not a function
+[ERROR] 2024-04-27T06:42:48.525Z: NoSuchElementError: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[3]/div/div/div/div[3]/div[2]/div[1]/div/div/div[5]/div/div[2]/div[2]/a"}
+  (Session info: chrome=124.0.6367.60)
+[ERROR] 2024-04-27T06:43:55.427Z: NoSuchElementError: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div/article/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/table/tbody/tr/td[3]/div[1]/div[1]/input"}
+  (Session info: chrome=124.0.6367.60)
+[ERROR] 2024-04-27T06:44:25.049Z: NoSuchElementError: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div/article/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/table/tbody/tr/td[3]/div[2]/div[2]"}
+  (Session info: chrome=124.0.6367.60)

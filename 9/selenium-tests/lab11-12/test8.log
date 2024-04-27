@@ -1,0 +1,5 @@
+[ERROR] 2024-04-27T06:56:28.801Z: AssertionError [ERR_ASSERTION]: Expected error message: "Адрес не найден"
+[ERROR] 2024-04-27T06:58:28.986Z: AssertionError [ERR_ASSERTION]: Expected error message: "Адрес не найден"
+[ERROR] 2024-04-27T07:00:24.849Z: AssertionError [ERR_ASSERTION]: Expected error message: "Адрес не найден"
+[ERROR] 2024-04-27T07:01:36.308Z: AssertionError [ERR_ASSERTION]: Ожидалось: "Адрес не найден", получено: 
+[ERROR] 2024-04-27T07:04:20.428Z: AssertionError [ERR_ASSERTION]: Ожидалось: "Адрес не найден", получено: 

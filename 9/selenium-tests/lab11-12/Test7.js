@@ -42,6 +42,5 @@ const BelitaShopPage = require('./BelitaShopPage');
         if (browserManager) {
             await browserManager.quit();
         }
-        logManager.close();
     }
 })();

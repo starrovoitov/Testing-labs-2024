@@ -5,13 +5,14 @@ class BelitaShopPage extends Page {
     constructor(driver) {
         super(driver);
         this.cartDeleteButton = By.xpath('/html/body/div[3]/div/div/article/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/table/tbody/tr/td[5]/div');
-        this.addToCartButton = By.xpath('/html/body/div[2]/div/div/div/div[3]/div[2]/div[1]/div/div/div[5]/div/div[2]/div[2]/a');
+        this.addToCartButton = By.xpath('/html/body/div[3]/div/div/div/div[3]/div[2]/div[1]/div/div/div[5]/div/div[2]/div[2]/a');
         this.totalPriceElement = By.css('[data-entity="basket-total-price"]');
     }
 
-    async sendKeys(locator, keys) {
-        const element = await this.findElement(locator);
-        await element.sendKeys(keys);
+    async sendKeys(elementLocator, text) {
+        const element = await this.findElement(elementLocator);
+        await element.clear();
+        await element.sendKeys(text);
     }
 
     async waitSeconds(seconds) {
@@ -56,8 +57,8 @@ class BelitaShopPage extends Page {
     }
 
     async sortProducts() {
-        const sortingDropdown = By.xpath('/html/body/div[2]/div/div/article/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/div[1]');
-        const option = By.xpath('/html/body/div[2]/div/div/article/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/div[2]/ul/li[2]');
+        const sortingDropdown = By.xpath('/html/body/div[3]/div/div/article/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/div[1]');
+        const option = By.xpath('/html/body/div[3]/div/div/article/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/div[2]/ul/li[2]');
 
         await this.clickElement(sortingDropdown);
 
@@ -66,7 +67,7 @@ class BelitaShopPage extends Page {
     }
 
     async selectDisplayOptions(option) {
-        const displayOptionsDropdown = By.xpath('/html/body/div[2]/div/div/article/div[2]/div[2]/div[1]/div[2]/div[2]/div[2]/div/div[1]');
+        const displayOptionsDropdown = By.xpath('/html/body/div[3]/div/div/article/div[2]/div[2]/div[1]/div[2]/div[2]/div[2]/div/div[1]');
         let liIndex;
 
         switch (option) {
@@ -83,7 +84,7 @@ class BelitaShopPage extends Page {
                 throw new Error(`Неправильное значение option: ${option}`);
         }
 
-        const liElement = By.xpath(`/html/body/div[2]/div/div/article/div[2]/div[2]/div[1]/div[2]/div[2]/div[2]/div/div[2]/ul/li[${liIndex}]`);
+        const liElement = By.xpath(`/html/body/div[3]/div/div/article/div[2]/div[2]/div[1]/div[2]/div[2]/div[2]/div/div[2]/ul/li[${liIndex}]`);
 
         await this.clickElement(displayOptionsDropdown);
         await this.clickElement(liElement);
@@ -97,31 +98,44 @@ class BelitaShopPage extends Page {
     }
 
     async getMaxQuantity() {
-        const maxQuantityText = By.xpath('/html/body/div[2]/div/div/article/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/table/tbody/tr/td[3]/div[2]/div[2]')
+        const maxQuantityText = By.xpath('/html/body/div[3]/div/div/article/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/table/tbody/tr/td[3]/div[2]/div[2]')
         const maxQuantityTextElement = await this.driver.findElement(maxQuantityText);
         const maxQuantityTextString = await maxQuantityTextElement.getText();
         return parseInt(maxQuantityTextString.split(' ')[0]);
     }
 
     async setQuantity(quantity) {
-        const quantityInputField = By.xpath('/html/body/div[2]/div/div/article/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/table/tbody/tr/td[3]/div[1]/div[1]/input');
+        const quantityInputField = By.xpath('/html/body/div[3]/div/div/article/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/table/tbody/tr/td[3]/div[1]/div[1]/input');
         await this.sendKeys(quantityInputField, quantity);
     }
 
     async clickBasketOnHeader() {
-        const anotherElement = By.xpath('/html/body/div[2]/div/div/article/div[2]/div[2]/div[2]/div/div/div[1]');
+        const anotherElement = By.xpath('/html/body/div[3]/div/div/article/div[2]/div[2]/div[2]/div/div/div[1]');
         await this.clickElement(anotherElement);
     }
 
 
     async getUpdatedQuantity() {
-        const updatedQuantityText = By.xpath('/html/body/div[2]/div/div/article/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/table/tbody/tr/td[3]/div[2]/div[2]')
+        const updatedQuantityText = By.xpath('/html/body/div[3]/div/div/article/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/table/tbody/tr/td[3]/div[2]/div[2]')
         const updatedQuantityTextElement = await this.driver.findElement(updatedQuantityText);
         const updatedQuantityTextString = await updatedQuantityTextElement.getText();
         return parseInt(updatedQuantityTextString.split(' ')[0]);
     }
 
+    async goToCheckout() {
+        const checkoutButton = By.xpath('/html/body/div[3]/div/div/article/div[2]/div[2]/div[3]/div/div/div[2]/div/div[3]/button');
+        await this.clickElement(checkoutButton);
+    }
 
+    async clickNextButtonAndWait(seconds, nextButtonXpath) {
+        await this.clickElement(By.xpath(nextButtonXpath));
+        await this.waitSeconds(seconds);
+    }
+
+    async getElementText(locator) {
+        const element = await this.findElement(locator);
+        return await element.getText();
+    }
 
 }
 
